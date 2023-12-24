@@ -29,8 +29,7 @@ char buffer[BUFFER_SIZE];
 
 char getKey(size_t i)
 {
-	if (i>=0)
-  	{
+	if (i>=0){
 		if(i>0x7FFF)
 			i%=0x7FFF;
 	}else i=0;
