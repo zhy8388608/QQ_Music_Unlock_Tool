@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
 
 			for (size_t j = 0; j < bytes_read; j++)
 				if (total_bytes< 0x514000)
-					buffer[j] ^= xor_table[(total_bytes + j) % 64];
+					buffer[j] ^= xor_table[total_bytes++ & 63];
 
 			fwrite(buffer, 1, bytes_read, out);
 			total_bytes += bytes_read;
