@@ -83,8 +83,8 @@ int main(int argc,char **argv) {
 		else if(strcmp(buffer,m4aHead)==0)
 			strcat(name,".m4a");
 		else {
-			printf("Error: failed to decrypt\n");
-			continue;
+			strcat(name,".bin");
+			printf("Warning: Decryption may fail.\n");
 		}
 
 		strcpy(buffer,"out\\");
