@@ -84,7 +84,7 @@ int main(int argc,char **argv) {
 			strcat(name,".m4a");
 		else {
 			strcat(name,".bin");
-			printf("Warning: Decryption may fail.\n");
+			printf("Warning: decryption may fail.\n");
 		}
 
 		strcpy(buffer,"out\\");
