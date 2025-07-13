@@ -42,7 +42,6 @@ int main(int argc,char **argv) {
 		system("pause");
 		return 0;
 	}
-	mkdir("out");
 	int fileCount;
 	size_t i,j,len;
 	for(fileCount=1; fileCount<argc; fileCount++) {
@@ -87,9 +86,7 @@ int main(int argc,char **argv) {
 			printf("Warning: decryption may fail.\n");
 		}
 
-		strcpy(buffer,"out\\");
-		strcat(buffer,name);
-		FILE *out=fopen(buffer,"wb");
+		FILE *out=fopen(name,"wb");
 		if(!out) {
 			printf("Error: failed to write %s\n",buffer);
 			continue;
