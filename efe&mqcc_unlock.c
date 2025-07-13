@@ -20,7 +20,8 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 
-	for (int i = 1; i < argc; i++) {
+	int i;
+	for (i = 1; i < argc; i++) {
 		const char *filename = argv[i];
 
 		char out_filename[1024];
@@ -58,13 +59,13 @@ int main(int argc, char *argv[]) {
 		}
 
 		unsigned char buffer[BUFFER_SIZE];
-		size_t total_bytes = 0;
+		size_t j, total_bytes = 0;
 
 		while (1) {
 			size_t bytes_read = fread(buffer, 1, BUFFER_SIZE, in);
 			if (bytes_read == 0) break;
 
-			for (size_t j = 0; j < bytes_read; j++)
+			for (j = 0; j < bytes_read; j++)
 				if (total_bytes< 0x514000)
 					buffer[j] ^= xor_table[total_bytes++ & 63];
 
