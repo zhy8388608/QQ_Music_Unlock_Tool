@@ -70,7 +70,6 @@ int main(int argc, char *argv[]) {
 					buffer[j] ^= xor_table[total_bytes++ & 63];
 
 			fwrite(buffer, 1, bytes_read, out);
-			total_bytes += bytes_read;
 		}
 
 		fclose(in);
